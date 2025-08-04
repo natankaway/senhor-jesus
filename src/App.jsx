@@ -1,29 +1,21 @@
-import React from 'react';
+import React from 'react'
+import './App.css'
+import Header from './components/Header'
+import BibliaSection from './components/BibliaSection'
+import PrayerSection from './components/PrayerSection'
+import Footer from './components/Footer'
 
-// Import providers
-import { ThemeProvider, AppStateProvider, NotificationProvider } from './contexts/index.js';
-
-// Import the main system component
-import { CTFutevoleiSystem } from './components/common/CTFutevoleiSystem.js';
-
-// Import utilities to initialize
-import './utils/scrollbar.js'; // This will initialize the scrollbar styling
-
-// Import the Toaster component
-import { Toaster } from './utils/toast.js';
-
-// Componente principal exportado
-const App = () => {
+function App() {
   return (
-    <ThemeProvider>
-      <NotificationProvider>
-        <AppStateProvider>
-          <CTFutevoleiSystem />
-          <Toaster />
-        </AppStateProvider>
-      </NotificationProvider>
-    </ThemeProvider>
-  );
-};
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        <BibliaSection />
+        <PrayerSection />
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
-export default App;
+export default App
